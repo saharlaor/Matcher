@@ -1,3 +1,11 @@
-.app {
-  display: inline-block;
+.App {
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.App__counters {
+  display: flex;
+  justify-content: space-between;
 }

@@ -17,24 +17,28 @@ class App extends React.Component {
 
   addLike() {
     this.setState((prevState) => {
-      likes: prevState.likes + 1;
+      return { likes: prevState.likes + 1 };
     });
   }
 
   addDislike() {
     this.setState((prevState) => {
-      dislikes: prevState.dislikes + 1;
+      return { dislikes: prevState.dislikes + 1 };
     });
   }
 
   render() {
     return (
       <div className="App">
-        <Counter img={LikeImg} text={this.state.likes} />
-        <Counter img={DislikeImg} text={this.state.dislikes} />
+        <div className="App__counters">
+          <Counter img={LikeImg} text={this.state.likes} />
+          <Counter img={DislikeImg} text={this.state.dislikes} />
+        </div>
         <Item img={this.getImgIndex()} />
-        <Button text="Like" handleClick={this.addLike} />
-        <Button text="Dislike" handleClick={this.addDislike} />
+        <div className="Buttons">
+          <Button text="Like" handleClick={this.addLike} />
+          <Button text="Dislike" handleClick={this.addDislike} />
+        </div>
       </div>
     );
   }
