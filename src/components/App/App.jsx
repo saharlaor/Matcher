@@ -22,17 +22,17 @@ class App extends React.Component {
     return this.state.likes + this.state.dislikes;
   };
 
-  addLike() {
+  addLike = () => {
     this.setState((prevState) => {
       return { likes: prevState.likes + 1 };
     });
-  }
+  };
 
-  addDislike() {
+  addDislike = () => {
     this.setState((prevState) => {
       return { dislikes: prevState.dislikes + 1 };
     });
-  }
+  };
 
   render() {
     return (
@@ -41,8 +41,8 @@ class App extends React.Component {
           <Counter img={LikeImg} text={this.state.likes} />
           <Counter img={DislikeImg} text={this.state.dislikes} />
         </div>
-        <Item img={this.getImgIndex()} />
-        <div className="Buttons">
+        <Item img={this.getImgIndex()} topic={this.state.topic} />
+        <div className="App__buttons">
           <Button text="Like" handleClick={this.addLike} />
           <Button text="Dislike" handleClick={this.addDislike} />
         </div>

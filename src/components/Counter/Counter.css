@@ -6,6 +6,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: auto;
+  gap: 0.5rem;
 }
 
 .Counter img {
