@@ -8,12 +8,19 @@ import DislikeImg from "../../assets/img/dislike.png";
 
 import "./App.css";
 
-class App extends React.Component {
-  state = { likes: 0, dislikes: 0 };
+const TOPICS = ["architecture", "nature", "person", "dog", "cat", "technology"];
 
-  getImgIndex() {
+class App extends React.Component {
+  state = {
+    likes: 0,
+    dislikes: 0,
+    topic: TOPICS[Math.floor(Math.random() * TOPICS.length)],
+  };
+
+  getImgIndex = () => {
+    console.log(this.state.likes + this.state.dislikes);
     return this.state.likes + this.state.dislikes;
-  }
+  };
 
   addLike() {
     this.setState((prevState) => {
